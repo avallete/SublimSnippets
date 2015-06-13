@@ -1,0 +1,24 @@
+<snippet>
+  <!-- Example: Hello, ${1:this} is a ${2:snippet}. -->
+  <content><![CDATA[
+#ifndef ${TM_FILEPATH/(([A-Za-z]+)\/src\/)|./\U(?1:$2_)\E/g}${TM_FILENAME/(([A-Z])([A-Z][a-z]))|(([a-z])([A-Z]))|([a-z])|(\.)/\U(?1:$2_$3)(?4:$5_$6)$7(?8:_)\E/g}
+#define ${TM_FILEPATH/(([A-Za-z]+)\/src\/)|./\U(?1:$2_)\E/g}${TM_FILENAME/(([A-Z])([A-Z][a-z]))|(([a-z])([A-Z]))|([a-z])|(\.)/\U(?1:$2_$3)(?4:$5_$6)$7(?8:_)\E/g}
+
+class ${1:${TM_FILENAME/(.+)\..+|.*/$1/:name}}
+{
+	public:
+		${1/(\w+).*/$1/}(void);
+		${1/(\w+).*/$1/}(${1/(\w+).*/$1/} const & src);
+		~${1/(\w+).*/$1/}(void);
+
+		${1/(\w+).*/$1/}& operator=(${1/(\w+).*/$1/} const & rhs);
+	$0
+};
+#endif
+]]></content>
+  <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+  <tabTrigger>cclassh</tabTrigger>
+  <description>Canonic Class Hpp</description>
+  <!-- Optional: Set a scope to limit where the snippet will trigger -->
+  <scope>source.c++</scope>
+</snippet>
