@@ -19,9 +19,9 @@ ${1/(\w+).*/$1/}::~${1/(\w+).*/$1/}(void)
 	return;
 }
 
-${1/(\w+).*/$1/}::${1/(\w+).*/$1/}& operator=(${1/(\w+).*/$1/} const & rhs)
+${1/(\w+).*/$1/}& ${1/(\w+).*/$1/}::operator=(${1/(\w+).*/$1/} const & rhs)
 {
-	return (${1/(\w+).*/$1/}(rhs));
+	return (*this);
 }
 ]]></content>
   <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
